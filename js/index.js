@@ -96,10 +96,12 @@ function run(intro = "Nothing seems apparent to you here.", op1 = "Move ahead.",
     }
 };
 function runScene() {
-    var params = [];
+    var params = {};
     sceneOut = {}; //clears sceneOut
+    /*  GET A DATABASE!
     params = scenarios[getScenarioIndex()];
     run(...params); // runs the scenario
+    */
     sceneLog.push(sceneOut);
 };
 // initChar(); // inits character object
