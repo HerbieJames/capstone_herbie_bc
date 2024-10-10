@@ -1,4 +1,4 @@
-/*
+/* BOOT UP WEB GAME
 
 // declare variables:
 import scenarios from "./scenes"; // array of objects with run() method
@@ -12,23 +12,22 @@ const sceneOut = {}; // empty object
 const upstateLog = []; // empty array of objects
 const upSceneOut = {}; // empty object
 
-// inits state object, runs narrative intro
+// declare functions:
+function getScenarioIndex() {
+    var scenarioIndex;
 
-// inits character object
+    // formula using state and Maths methods for scenarioIndex
+            
+    return scenarioIndex;
+}
+
+initState(); // inits state object, runs narrative intro
+
+initChar(); // inits character object
 
 while (state.prog < 5) { // inits game loop until progress completes
     runScene() {
-
-        var shapes = ['fork', 'stretch', 'breather']
-        var shape = shapes[Math.floor(Math.random() * 3);]
         var sceneOut = {} // stores all global variable changes made in scene
-        function getScenarioIndex() {
-            var scenarioIndex;
-
-            // formula using state and Maths methods for scenarioIndex
-            
-            return scenarioIndex;
-        }
         scenarios[getScenarioIndex()].run(); // runs specific scenario
         sceneLog.push(sceneOut);
         sceneOut = sceneLog[sceneLog.length - 1];
