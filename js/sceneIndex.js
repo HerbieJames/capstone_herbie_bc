@@ -33,15 +33,15 @@ export const sceneIndex = [
             log:
             "You move on.",
             script: () => { 
-                state.time = state.time === "day" ? "night" : "night";
-                if (Math.random + state.luck <= 0.2) {
+                state.time = state.time === "day" ? "night" : "day";
+                if (Math.random() + state.luck <= 0.2*character.pres) { // conditionally adds thread
                     threadIndex.push( {
                         name: "You have a tail.",
                         memOfState: state,
-                        chaScript: () => { // passively effects the character
-                            if (character.presence <= 1) {character.presence +=1;}
+                        chaScript: () => { // effects the character
+                            if (character.pres <= 1) {character.pres +=1;}
                         }, 
-                        staScript: () => { // passively effects the state
+                        staScript: () => { // effects the state
                             if (state.luck === 0.2) {state.luck = 0.1;}
                         },
                         resolve: () => { // checks whether a thread should be moved to threadsResolving
@@ -49,4 +49,5 @@ export const sceneIndex = [
                         }});
                 }               
             } } }
+            // test before adding more scenes
 ];
